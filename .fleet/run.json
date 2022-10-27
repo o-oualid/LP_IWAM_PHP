@@ -1,0 +1,33 @@
+{
+  "configurations": [
+    {
+      "type": "docker-build",
+      "name": "build",
+      "file": "$PROJECT_DIR$/Dockerfile",
+      "buildOptions": "-t php-app"
+    },
+      {
+          "type": "docker-build",
+          "name": "build-dockertest",
+          "file": "$PROJECT_DIR$/Dockerfile",
+          "buildOptions": "-t php-app"
+      },
+
+    {
+      "type": "docker-compose-up",
+      "name": "run",
+      "files": [
+        "$PROJECT_DIR$/docker-compose.yml"
+      ],
+        "services":["php","db"]
+    },
+      {
+      "type": "docker-compose-up",
+      "name": "test",
+      "files": [
+          "$PROJECT_DIR$/docker-compose.yml"
+      ],
+      "services":["tests"]
+  }
+  ]
+}

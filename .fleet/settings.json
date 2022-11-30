@@ -1,3 +1,4 @@
 {
-    "php.executable" : "/usr/bin/php",
+    "php.executable" : "/usr/bin/php"
+    
 }

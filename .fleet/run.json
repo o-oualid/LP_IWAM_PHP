@@ -1,33 +1,43 @@
 {
   "configurations": [
     {
+      "name": "test",
+      "type": "command",
+      "program": "./vendor/bin/phpunit",
+      "args": ["--testdox","tests"],
+    },
+    {
       "type": "docker-build",
       "name": "build",
       "file": "$PROJECT_DIR$/Dockerfile",
       "buildOptions": "-t php-app"
     },
-      {
-          "type": "docker-build",
-          "name": "build-dockertest",
-          "file": "$PROJECT_DIR$/Dockerfile",
-          "buildOptions": "-t php-app"
-      },
-
+    {
+      "type": "docker-build",
+      "name": "build-dockertest",
+      "file": "$PROJECT_DIR$/Dockerfile",
+      "buildOptions": "-t php-app"
+    },
     {
       "type": "docker-compose-up",
       "name": "run",
       "files": [
         "$PROJECT_DIR$/docker-compose.yml"
       ],
-        "services":["php","db"]
+      "services": [
+        "php",
+        "db"
+      ]
     },
-      {
+    {
       "type": "docker-compose-up",
-      "name": "test",
+      "name": "docker-test",
       "files": [
-          "$PROJECT_DIR$/docker-compose.yml"
+        "$PROJECT_DIR$/docker-compose.yml"
       ],
-      "services":["tests"]
-  }
+      "services": [
+        "tests"
+      ]
+    },
   ]
 }

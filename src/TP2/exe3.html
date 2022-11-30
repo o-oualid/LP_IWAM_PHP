@@ -1,0 +1,25 @@
+<div style="width: 40%;display:inline-block;">
+    <form id="form" method="post" action="exe3.php">
+        <div id="clients">
+            <input type="text" name="clients[]"><br>
+        </div>
+        <input type="submit" value="sort">
+        <button id="addClient" type="button">Add Client</button>
+    </form>
+</div>
+
+<div id="output">
+</div>
+
+<script>
+    let clientsNumber = 1;
+    document.getElementById("addClient").onclick = (event) => {
+        let newClient = document.createElement("input");
+        newClient.setAttribute('name', "clients[]");
+        newClient.setAttribute('type', "text");
+        document.getElementById("clients").appendChild(newClient);
+
+        let breakLine = document.createElement("br");
+        document.getElementById("clients").append(breakLine);
+    };
+</script>

@@ -15,7 +15,7 @@ public function testCannotBeCreatedFromInvalidEmailAddress(): void
 {
     $this->expectException(InvalidArgumentException::class);
 
-    Email::fromString('invalid');
+    Email::fromString('invalid@o@ualid.com');
 }
 
 public function testCanBeUsedAsString(): void

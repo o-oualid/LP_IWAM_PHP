@@ -103,7 +103,7 @@ if ($result->num_rows > 0) {
             <td></td>
             <td><input type='text' name='Reference' placeholder='Reference'></td>
             <td><input type='text' name='Prix' placeholder='Prix'></td>
-            <td><input type='Designation' name='Designation' placeholder='Designation'></td>
+            <td><input type='text' name='Designation' placeholder='Designation'></td>
             <td><input type='text' name='Categorie' placeholder='Categorie'></td>
             <td><input type='reset'></td>
             <td><input type='submit'></td>

@@ -1,0 +1,29 @@
+<?php
+if (!isset($isadmin) || !$isadmin) {
+    header("Location: index.php");
+}
+
+include_once "sql.php";
+$db = sqlConnect();
+
+
+if (!$db) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+
+if (isset($_POST['delete_product'])) {
+    
+    $id = mysqli_real_escape_string($db, $_POST['id']);
+
+    
+    $query = "DELETE FROM product WHERE id=$id";
+    if (mysqli_query($db, $query)) {
+        
+    } else {
+    }
+}
+
+
+mysqli_close($db);
+?>

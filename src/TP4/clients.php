@@ -12,17 +12,17 @@
 
     .btn-delete {
         background-color: firebrick;
-        width:100%;
+        width: 100%;
     }
 
     .btn-edit {
         background-color: dodgerblue;
-        width:100%;
+        width: 100%;
     }
 
     .btn-update {
         background-color: mediumseagreen;
-        width:100%;
+        width: 100%;
     }
 </style>
 <?php
@@ -71,6 +71,7 @@ if ($result->num_rows > 0) {
         <th></th>
        </tr>
 ";
+
     while ($row = $result->fetch_assoc()) {
         if (isset($_GET['edit']) && $_GET['edit'] == $row['ID']) {
             echo "<tr>
@@ -86,14 +87,11 @@ if ($result->num_rows > 0) {
         </tr>
         ";
         } else {
-            echo "<tr>
-                <td>$row[ID]</td>
-                <td>$row[Nom]</td>
-                <td>$row[Adresse]</td>
-                <td>$row[Tel]</td>
-                <td>$row[Ville]</td>
-                <td><a href='?edit=$row[ID]&page=$page'><button class='btn-edit'>Edit</button></a></td>
-                <td><a href='?delete=$row[ID]&page=$page'><button class='btn-delete'>Delete</button></a></td>
+            echo "<tr>";
+            foreach ($row as $item)
+                echo "<td>$item</td>";
+            echo "<td><a href='?edit=$row[ID]&page=$page'><button class='btn-edit'>Edit</button></a></td>
+                  <td><a href='?delete=$row[ID]&page=$page'><button class='btn-delete'>Delete</button></a></td>
                 </tr>";
         }
     }

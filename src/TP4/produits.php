@@ -43,8 +43,8 @@ SET
     Prix= '$_POST[Prix]',
     Designation='$_POST[Designation]',
     Categorie='$_POST[Categorie]',
-    PrixAcquisition='$_POST[PrixAcquisition]',
-WHERE
+    PrixAcquisition='$_POST[PrixAcquisition]'
+    WHERE
     Reference = $_POST[Reference];";
     $conn->query($sql);
 } else if (isset($_POST["Reference"])) {
